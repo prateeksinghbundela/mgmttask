@@ -1,0 +1,22 @@
+<div id="calendar"></div>
+<script>
+	$(function() {
+var calendarEl = document.getElementById('calendar');
+
+    // ================= day view ====================
+    var calendar = new Calendar(calendarEl, {
+      header: {
+        left: 'prev,next,today',
+        right: 'dayGridMonth, listWeek'
+
+      },
+
+      plugins: [ dayGridPlugin, listPlugin ],
+      defaultView: 'dayGridMonth',
+      events: <%= raw @tasks.to_json%>
+    });
+
+    calendar.render();
+
+  });
+</script>

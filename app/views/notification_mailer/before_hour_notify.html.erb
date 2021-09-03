@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <title>Lastcard</title>
+    <style>
+      @import url(http://fonts.googleapis.com/css?family=Roboto);
+      html {
+        font-family: "Roboto", sans-serif;
+      }
+      .main {
+        font-size: medium;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .bullet {
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+        color: #333333;
+      }
+      p {
+        font-family: "Roboto", sans-serif;
+        color: #333333;
+      }
+      a {
+        color: white !important;
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        padding-right: 10px;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .lastcardfooter a {
+        text-align: center !important;
+        margin-right: 10px !important;
+        text-decoration: none !important;
+        color: white !important;
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .table-main{
+        background-color: #f2f2f2;
+      }
+      .center-table{
+        background-color: #eaf0f2;
+      }
+     .title-dark{
+          color: #333333;
+      }
+      .back-white{
+        background-color: #ffffff;
+      }
+      .color-dark{
+        color: #333333;
+      }
+      .color-light{
+        color: #ffffff;
+      }
+      .footer-bg{
+        background-color: #dec26e; 
+      }
+      @media (prefers-color-scheme: dark) {
+        .table-main{
+          background-color: #f2f2f2 !important;
+        }
+        .center-table{
+          background-color: #eaf0f2 !important;
+        }
+        .title-dark{
+          color: #333333 !important;
+        }
+        .back-white{
+        background-color: #ffffff !important;
+        }
+        .footer-bg{
+          background-color: #dec26e !important; 
+        }
+        .color-light{
+          color: #ffffff !important;
+        }
+      }
+
+    </style>
+  </head>
+</html>
+
+<body style="margin: 0; padding: 0">
+  <table width="100%" style="border-collapse: collapse" border="0" cellspacing="0" cellpadding="0" class="table-main">
+
+
+    <tr>
+      <td style="padding: 30px 50px">
+        <table
+          width="100%"
+          align="center"
+
+          style="
+            max-width: 600px;
+            background: #ffffff 0% 0% no-repeat padding-box;
+            box-shadow: 0px 0px 44px #00000026;
+            border-radius: 19px;
+            text-align: left;
+            padding: 0px 0px 30px;
+            padding-left: 10px;
+            padding-right: 10px;"
+          cellspacing="0"
+          cellpadding="0" class="back-white">
+        <tr>
+            <td style="text-align: center; padding-top: 30px">
+              <p style="font-weight: bold; font-size: 32px; color: #cd6e53">DeadLine Notification</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="text-align: center; padding-top: 10px">
+              <p style="font-weight: normal; font-size: 20px;" class="color-dark"><%= @task.try(:title) %></p>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center; padding-top: 10px">
+              <p style="font-weight: normal; font-size: 20px;" class="color-dark"><%= @task.try(:description) %></p>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center; padding-top: 10px">
+              <p style="font-weight: normal; font-size: 20px;" class="color-dark"> Your task deadline will be on <%= @task.try(:end_time).strftime("%Y/%m/%d %H:%M") %></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor="#DEC26E" style="padding: 20px" class="footer-bg">
+        <table
+          align="center"
+          style="font-size: 14px; color: white !important; font-weight: 400; line-height: 16px; text-align: center" class="color-light">
+          <tbody>
+            <tr>
+              <td>Copyright © 2021 MGMT | All Rights Reserved. <br /></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>

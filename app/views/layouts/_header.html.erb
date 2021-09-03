@@ -1,0 +1,46 @@
+<body class="hero-anime">	
+	<div class="navigation-wrap bg-light start-header start-style main-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-expand-md navbar-light">
+					
+						<a class="navbar-brand" href="/">MGMT</a>	
+						
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+							<ul class="navbar-nav ml-auto py-4 py-md-0">
+								<% if user_signed_in? %>
+									<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+		      					<%= link_to 'Tasks', tasks_path, :class => 'nav-link' %>
+		      				</li>
+		      				<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+		      					<%= link_to 'Calender', full_calender_tasks_path, :class => 'nav-link' %>
+		      				</li>
+									<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+		      					<%= link_to 'Edit user', edit_user_registration_path, :class => 'nav-link' %>
+		      				</li>
+		      				
+		      				<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+		   							<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link' %>
+		   						</li>
+		      			<% else %>
+		      				<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+		          			<%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %>
+		          		</li>
+		          		<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+		    						<%= link_to "Login", new_user_session_path, :class => 'nav-link'%>
+		  						</li>
+		      			<% end %>
+							</ul>
+						</div>
+					</nav>		
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
