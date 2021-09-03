@@ -57,7 +57,7 @@ class TasksController < ApplicationController
   end
 
   def full_calender
-    @tasks = Task.active
+    @tasks = current_user.tasks.active
     @tasks = @tasks.map{|task| {title: task.title, start: task.start_time, end: task.end_time }}
   end
 
